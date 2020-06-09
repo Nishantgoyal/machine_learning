@@ -52,3 +52,20 @@
 
 # def joint(A, B):
 #     return
+P_H_C1 = 0.5
+P_T_C1 = 1 - P_H_C1
+
+P_H_C2 = 0.9
+P_T_C2 = 1 - P_H_C2
+
+P_HHT_C1 = P_H_C1 * P_H_C1 * P_T_C1
+P_THH_C2 = P_T_C2 * P_H_C2 * P_H_C2
+
+P_HHT_C2 = P_H_C2 * P_H_C2 * P_T_C2
+P_THH_C1 = P_T_C1 * P_H_C1 * P_H_C1
+
+P_HHT = P_HHT_C1 + P_HHT_C2
+P_THH = P_THH_C1 + P_THH_C2
+
+p = (P_HHT_C1 * P_THH_C1 + P_HHT_C2 * P_THH_C2) / (P_HHT * P_THH)
+print(p)
